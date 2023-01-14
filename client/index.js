@@ -1,3 +1,6 @@
-fetch("/api")
-.then(res => console.log(res))
-.catch(err => console.log(err))
+import React from "react";
+import { render } from "react-dom";
+import App from './App.jsx';
+
+
+render(<App />, document.getElementById('root'));
