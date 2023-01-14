@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Keyboard = () => (
+const Keyboard = ({targetString}) => (
   <div id="keyboard">
-    <div>Keyboard</div>
+    <input type="text" />
   </div>
 )
 
