@@ -1,9 +1,12 @@
 import React from 'react'
 
 
+import NavLogin from '../components/NavLogin.jsx';
+
 const NavBar = () => (
   <nav id='nav-bar'>
-    <button id="open-log-in-modal">SKIRTTTT</button>
+    <div>Nav Bar</div>
+    <NavLogin />
   </nav>
 )
 
