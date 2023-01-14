@@ -2,9 +2,9 @@ import React from 'react';
 
 import CharDisplay from '../components/CharDisplay.jsx'
 
-const TextDisplay = () => (
+const TextDisplay = ({targetString}) => (
   <div id="text-display">
-    <CharDisplay />
+    {targetString}
   </div>
 )
 
