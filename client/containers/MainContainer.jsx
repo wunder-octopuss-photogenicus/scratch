@@ -8,15 +8,15 @@ const MainContainer = () => {
   useEffect(() => {
     const fetchString = async () => {
       try {
-        const res = await fetch('/api/newgame');
+        const res = await fetch('api/newgame');
         const data = await res.json();
-        targetStringSetter(data.content);
+        targetStringSetter(data);
       } catch (err) {
         console.log(err);
       }
     }
     fetchString();
-  }, [])
+  }, []);
   return (
   <section id="main-container">
     <TextDisplay targetString={targetString}/>
