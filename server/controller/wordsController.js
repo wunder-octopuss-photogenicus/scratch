@@ -1,3 +1,6 @@
+const db = require("../models/typingGameModels");
+const fetch = require("node-fetch");
+
 const wordsController = {};
 
 wordsController.getWords = (req, res, next) => {
