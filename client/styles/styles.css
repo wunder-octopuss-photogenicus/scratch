@@ -14,6 +14,18 @@ body {
   position: relative;
 }
 
+#text-display {
+  margin: 3em 3em 0 3em;
+}
+
+#text-input {
+  border: #00ff00 solid 1px;
+  background-color: black;
+  height: 2em;
+  margin: 3em;
+  width: 70em;
+}
+
 button {
   border: #00ff00 solid 1px;
   background-color: black;
@@ -30,6 +42,6 @@ button {
   position: absolute;
   height: 10rem;
   width: 100%;
-  bottom: 0;
+  bottom: 1;
 
 }
