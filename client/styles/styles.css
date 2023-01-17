@@ -7,12 +7,13 @@
 
 body {
   background-color: black;
-}
-
-#app {
   height: 100vh;
   position: relative;
 }
+
+/* #app {
+
+} */
 
 #text-display {
   margin: 3em 3em 0 3em;
@@ -41,8 +42,8 @@ button {
 
   position: absolute;
   height: 10rem;
-  width: 100%;
-  bottom: 1;
+  width: 99%;
+  bottom: 0;
 
 }
 
