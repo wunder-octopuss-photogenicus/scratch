@@ -57,9 +57,4 @@ userController.createUser = async (req, res, next) => {
     });
 };
 
-// userController.getUser = (req, res, next) => {
-//   const { username } = req.body;
-//   text = "";
-// };
-
 module.exports = userController;
