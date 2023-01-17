@@ -26,7 +26,7 @@ app.post(
   userController.verify,
   cookieController.setSSIDCookie,
   (req, res) => {
-    res.status(200).json({ isLoggedIn: res.locals.isLoggedIn });
+    res.status(200).json({ user_id: res.locals.user_id });
   }
 );
 
@@ -35,7 +35,7 @@ app.post(
   userController.createUser,
   cookieController.setSSIDCookie,
   (req, res) => {
-    res.status(200).json({ createdNewChar: res.locals.newChar });
+    res.status(200).json({ user_id: res.locals.user_id });
   }
 );
 

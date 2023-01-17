@@ -4,11 +4,11 @@ const fetch = require("node-fetch");
 const wordsController = {};
 
 wordsController.getWords = (req, res, next) => {
-  fetch("https://api.quotable.io/random?minLength=200")
+  // fetch("https://api.quotable.io/random?minLength=200")
+  fetch("https://geek-jokes.sameerkumar.website/api?format=json")
     .then((data) => data.json())
     .then((data) => {
-      console.log(data.content);
-      res.locals.quoteText = data.content;
+      res.locals.quoteText = data.joke;
       return next();
     })
     .catch((err) => {
