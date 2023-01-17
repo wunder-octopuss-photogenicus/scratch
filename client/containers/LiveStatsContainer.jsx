@@ -2,9 +2,9 @@ import React from 'react';
 
 const LiveStatsContainer = ({stats}) => (
   <div id="stats-container">
-    <div>words per minute: {stats.wpm}</div>
-    <div>characters per minute: {stats.cpm}</div>
-    <div>accuracy: {stats.accuracy} %</div>
+    <div>Words per minute: {stats.wpm}</div>
+    <div>Characters per minute: {stats.cpm}</div>
+    <div>Accuracy: {stats.accuracy} %</div>
   </div>
 )
 

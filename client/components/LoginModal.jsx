@@ -58,15 +58,17 @@ const LoginModal = ({setModal}) => (
       <label>Password: </label>
       <input id="password" type="text" />
 
-      <button id="sign-in-btn"
-        onClick={(e) => {handleClick(e)}}>
-        Login
-      </button>
+      <div id="login-modal-btns">
+        <button id="sign-in-btn"
+          onClick={(e) => {handleClick(e)}}>
+          Login
+        </button>
 
-      <button id="sign-up-btn"
-        onClick={(e) => {handleClick(e)}}>
-        Sign Up
-      </button>
+        <button id="sign-up-btn"
+          onClick={(e) => {handleClick(e)}}>
+          Sign Up
+        </button>
+      </div>
 
       <button 
         id="cancel-sign-in-btn" 
