@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 // look at the value of the input feild
 // check length - 1 of input feild against target string unless length is 0
 
-const Keyboard = ({target, targetString, targetIndex, indexSetter}) => {
+const Keyboard = ({target, targetString, targetIndex, indexSetter, timer, timerSetter}) => {
   const [inputValue, setInputValue] = useState('');
   // let timerStart
 
@@ -44,6 +44,10 @@ const Keyboard = ({target, targetString, targetIndex, indexSetter}) => {
         // }}
         onChange={(e) => {
           setInputValue(e.target.value)
+        }}
+        onClick={() => {
+          timerSetter(Date.now())
+          console.log("timer Start", timer);
         }}
       />
     </div>
