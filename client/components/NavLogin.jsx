@@ -3,16 +3,13 @@ import React, { useState } from "react";
 import LoginModal from "./LoginModal.jsx";
 
 function NavLogin() {
-  const [showModal, setModal] = useState(false)
-  function renderModal () {
-    
-  }
+  const [showModal, setModal] = useState(false);
 
   
   return (
-    <div>
-      <button id="nav-login-btn" onClick={() => {setModal(true)}}>Login Button</button>
-      {(showModal) ? <LoginModal /> : []}
+    <div id="nav-login">
+      <button id="nav-login-btn" onClick={() => {setModal(true)}}>Login</button>
+      {(showModal) ? <LoginModal setModal={setModal} /> : []}
     </div>
   )
   

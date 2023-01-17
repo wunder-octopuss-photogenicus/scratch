@@ -75,7 +75,7 @@ function genStats(target, timerStart, errors) {
   const seconds = Math.round((end - timerStart) / 1000);
   const wpm = Math.floor((target.split(" ").length / seconds) * 60)
   const cpm = Math.floor((target.length / seconds) * 60)
-  const accuracy = ((target.length - errors) / target.length) * 100
+  const accuracy = (((target.length - errors) / target.length) * 100).toFixed(2)
   console.log("accuracy", accuracy, "errors count", errors);
   return {wpm: wpm, cpm: cpm, accuracy: accuracy};
 }

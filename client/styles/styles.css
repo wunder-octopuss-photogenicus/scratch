@@ -3,27 +3,43 @@
 * {
   color: #00ff00;
   font-family: 'PT Mono', monospace;
+  font-size: 17px;
 }
 
 body {
   background-color: black;
-}
-
-#app {
   height: 100vh;
   position: relative;
+}
+
+h1 {
+  padding-left: 1em;
+  font-size: 40px;
+}
+
+#stats-container {
+  display: flex;
+  flex-direction: column;
+  padding-right: 2em;
+  text-align: right;
 }
 
 #text-display {
   margin: 3em 3em 0 3em;
 }
 
+#text-display span {
+  font-size: 25px;
+}
+
 #text-input {
   border: #00ff00 solid 1px;
   background-color: black;
   height: 2em;
-  margin: 3em;
-  width: 70em;
+  margin: 2em;
+  width: 93%;
+  padding-left: 1em;
+  font-size: 25px;
 }
 
 button {
@@ -38,12 +54,62 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   position: absolute;
   height: 10rem;
-  width: 100%;
-  bottom: 1;
+  width: 99%;
+  bottom: 2em;
 
+}
+
+#nav-login-btn {
+  padding: 1em 2em 1em 2em;
+}
+
+#login-modal {
+  background-color: none;
+  border: 2px solid #00ff00;
+  padding: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 20em;
+  height: 5em;
+  position: absolute;
+  margin-left: -12em;
+  top: -20em;
+  
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+#login-modal-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#username {
+  background-color: black;
+  border: 2px solid #00ff00;
+  margin-bottom: 10px;
+}
+
+#password {
+  background-color: black;
+  border: 2px solid #00ff00;
+  margin-bottom: 10px;
+}
+
+
+#cancel-sign-in-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .correct {

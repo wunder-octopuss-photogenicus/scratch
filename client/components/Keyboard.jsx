@@ -33,7 +33,8 @@ const Keyboard = ({target, targetString, targetIndex, indexSetter, timer, timerS
   return (
     <div id="keyboard">
       <input id='text-input' 
-        type="text" 
+        type="text"
+        placeholder="Start typing..."
         onKeyDown={(e) => {
           // console.log(e.key)
           if (e.key !== 'Shift' && e.key !== 'Backspace') {
