@@ -39,12 +39,39 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   position: absolute;
   height: 10rem;
   width: 99%;
-  bottom: 0;
+  bottom: 2em;
 
+}
+
+#nav-login-btn {
+  padding: 1em 2em 1em 2em;
+}
+
+
+#login-modal {
+  background-color: none;
+  border: 2px solid #00ff00;
+  padding: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 20em;
+  height: 5em;
+  position: absolute;
+  margin-left: -12em;
+  top: -23em;
+}
+
+#cancel-sign-in-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .correct {
