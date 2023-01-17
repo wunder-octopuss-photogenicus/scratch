@@ -3,26 +3,38 @@ import TextDisplay from './TextDisplay.jsx';
 import Keyboard from '../components/Keyboard.jsx';
 
 const MainContainer = () => {
-  const [targetString, targetStringSetter] = useState('');
+  const [target, targetSetter] = useState('');
+  // targetString is an array of string characters in html span elements
+  // const [targetString, targetStringSetter] = useState([]);
+  const [targetIndex, indexSetter] = useState(0);
 
   useEffect(() => {
-    const fetchString = async () => {
-      try {
-        const res = await fetch('api/newgame');
-        const data = await res.json();
-        targetStringSetter(data);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    fetchString();
-  }, []);
+    fetchTargetString(targetSetter);
+  }, []); // TODO: track when they've typed successfully
+  
   return (
   <section id="main-container">
-    <TextDisplay targetString={targetString}/>
-    <Keyboard targetString={targetString}/>
+    <TextDisplay target={target} targetIndex={targetIndex}/>
+    <Keyboard 
+      target={target} 
+      // targetString={targetString}
+      targetIndex={targetIndex} 
+      indexSetter={indexSetter}
+    />
   </section>
   )
 }
+
+async function fetchTargetString(targetSetter) {
+  try {
+    const res = await fetch('api/newgame');
+    const data = await res.json();
+    targetSetter(data);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+
 
 export default MainContainer;

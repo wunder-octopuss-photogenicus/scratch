@@ -10,14 +10,14 @@ const handleClick = (e) => {
     
     const createUser = async () => {
       try {
-        const res = fetch('/signup', {
-          method: POST,
+        const res = await fetch('/api/signup', {
+          method: 'POST',
           body: JSON.stringify(user),
           headers: {
             'Content-Type': 'application/json'
           }
         })
-        const data = res.json();
+        const data = await res.json();
         console.log(data);
       } catch (err) {
         console.log(err)
@@ -38,7 +38,7 @@ const LoginModal = () => (
 
       <button id="sign-in-btn"
         onClick={(e) => {handleClick(e)}}>
-        Sign In
+        Sign Up
       </button>
       <button 
         id="cancel-sign-in-btn" 
