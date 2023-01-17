@@ -39,6 +39,10 @@ app.post(
   }
 );
 
+app.post("/score", wordsController.addScores, (req, res) => {
+  res.status(200).json(res.locals.newScore);
+});
+
 app.use("*", (req, res) => res.status(404).send("Page Not Found"));
 
 app.use((err, req, res, next) => {

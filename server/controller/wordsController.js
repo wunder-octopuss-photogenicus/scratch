@@ -22,4 +22,26 @@ wordsController.getWords = (req, res, next) => {
     });
 };
 
+wordsController.addScores = (req, res, next) => {
+  const { cookie } = req.headers;
+  console.log(cookie, typeof cookie); //ssid=37
+  const id = Number(cookie.slice(5));
+  const { wpm, cpm, accuracy } = req.body;
+  value = [wpm, cpm, accuracy, id];
+  text = `INSERT INTO profiles (wpm, cpm, accuracy, user_id) VALUES ($1, $2, $3, $4) `;
+  db.query(text, value)
+    .then((data) => {
+      res.locals.newScore = data.rows[0];
+      return next();
+    })
+    .catch((err) => {
+      next({
+        log: `userController.addScores: ERROR: ${err}`,
+        message: {
+          err: "Error occured in userController.addScores, check server logs for more details",
+        },
+      });
+    });
+};
+
 module.exports = wordsController;
