@@ -31,7 +31,7 @@ wordsController.addScores = (req, res, next) => {
   text = `INSERT INTO profiles (wpm, cpm, accuracy, user_id) VALUES ($1, $2, $3, $4) `;
   db.query(text, value)
     .then((data) => {
-      res.locals.newScore = data.rows[0];
+      // res.locals.newScore = data.rows[0];
       return next();
     })
     .catch((err) => {
