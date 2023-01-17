@@ -4,41 +4,25 @@ import Keyboard from '../components/Keyboard.jsx';
 
 const MainContainer = () => {
   const [target, targetSetter] = useState('');
-  // targetString = array of string characters in html span elements
-  const [targetString, targetStringSetter] = useState([]);
-  const [lastCorrectInputIndex, indexSetter] = useState(0);
+  // targetString is an array of string characters in html span elements
+  // const [targetString, targetStringSetter] = useState([]);
+  const [targetIndex, indexSetter] = useState(0);
 
   useEffect(() => {
     fetchTargetString(targetSetter);
   }, []); // TODO: track when they've typed successfully
   
-
-  useEffect(() => {
-    stringSpan(target, targetStringSetter);
-  }, [target])
-  
   return (
   <section id="main-container">
-    <TextDisplay targetString={targetString}/>
+    <TextDisplay target={target} targetIndex={targetIndex}/>
     <Keyboard 
       target={target} 
-      correctIndex={lastCorrectInputIndex} 
+      // targetString={targetString}
+      targetIndex={targetIndex} 
       indexSetter={indexSetter}
     />
   </section>
   )
-}
-
-
-function stringSpan (target, targetStringSetter) {
-  // create an array to store each character from the target string as an individual span element
-  let stringSpan = []
-  // separate each string character into its own span element, and store in stringSpan
-  target.split('').forEach((char, i)=> {
-    stringSpan.push(<span key={i}>{char}</span>);
-  });
-  // update the state for the targetString
-  targetStringSetter(stringSpan);
 }
 
 async function fetchTargetString(targetSetter) {
@@ -50,5 +34,7 @@ async function fetchTargetString(targetSetter) {
     console.log(err);
   }
 }
+
+
 
 export default MainContainer;

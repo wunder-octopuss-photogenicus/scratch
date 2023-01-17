@@ -45,3 +45,12 @@ button {
   bottom: 1;
 
 }
+
+.correct {
+  color: white;
+}
+
+.underline {
+  text-decoration: underline white 4px;
+  text-underline-offset: 6px;
+}
